@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('alamat', 150)->nullable();
             $table->string('foto_profil', 100)->nullable();
             $table->enum('level', ['user', 'admin'])->default('user');
-            $table->rememberToken();
             $table->timestamps();
         });
 
