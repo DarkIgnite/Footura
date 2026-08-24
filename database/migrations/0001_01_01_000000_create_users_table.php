@@ -12,12 +12,12 @@ return new class extends Migration
             $table->id();
             $table->string('username', 50);
             $table->string('email', 50)->unique();
-            $table->string('password', 25);
+            $table->string('password', 255); // Use 255 for standard bcrypt
             $table->string('no_telp', 15)->nullable();
             $table->string('alamat', 150)->nullable();
             $table->string('foto_profil', 100)->nullable();
             $table->enum('level', ['user', 'admin'])->default('user');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         });
     }
 
